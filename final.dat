@@ -1,0 +1,69 @@
+set MOIS := Janvier Fevrier Mars Avril Mai Juin;
+set PRODUITS := P1 P2 P3 P4 P5 P6 P7;
+set MACHINES := bro for_v for_h ale rab;
+set FABRIQUE :=(bro,P1) (bro,P2) (bro,P5) (bro,P6) 
+              (bro,P7) (for_v,P1) (for_v,P2) (for_v,P4)
+              (for_v,P6) (for_h,P1) (for_h,P3) (for_h,P7)
+              (ale,P1) (ale,P2) (ale,P4) (ale,P5)
+              (ale,P7) (rab,P3) (rab,P5) (rab,P7);
+
+param achat := bro 3000 for_v 8000 for_h 6000 ale 1500 rab 4000; # Q3 achat de machines
+
+param nb_mach := bro 4 for_v 2 for_h 3 ale 1 rab 1;
+param maint := 
+:   bro for_v for_h ale rab :=
+Janvier  1   0   0   0   0 
+Fevrier  0   0   2   0   0 
+Mars  0   0   0   1   0 
+Avril  0   1   0   0   0
+Mai  1   0   1   0   0
+Juin  0   1   0   0   1;
+
+param vente_max :=
+:   P1 P2 P3 P4 P5 P6 P7 :=
+Janvier  500   1000   300   300   800   200   100    
+Fevrier  600   500   200   0   400   300   150
+Mars  300   600   0   0   500   400   100
+Avril  200   300   400   500   200   0   100
+Mai  0   100   500   100   1000   300   0
+Juin  500   500   100   300   1100   500   60;
+
+param prix := P1 10 P2 6 P3 8 P4 4 P5 11 P6 9 P7 3;
+
+param heures_fabrique := 
+bro  P1  0.5
+bro  P2  0.7
+bro  P5  0.3
+bro  P6  0.2
+bro  P7   0.5
+
+for_v  P1   0.1
+for_v  P2   0.2
+for_v  P4   0.3
+for_v  P6  0.6
+
+for_h  P1  0.2
+for_h  P3  0.8
+for_h  P7  0.6
+
+ale  P1  0.05
+ale  P2  0.03
+ale  P4  0.07
+ale  P5  0.1
+ale  P7  0.08
+
+rab  P3  0.01
+rab  P5  0.05
+rab  P7  0.05;
+
+param nb_jours := 24;
+
+param nb_heures := 8;
+
+param cout_stock := 0.5;
+
+param stock_max := 100;
+
+param stock_dep := 0;
+
+param stock_fin := 50;

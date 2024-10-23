@@ -1,0 +1,52 @@
+include ../monampl/projet-m2/projet2/final.run
+
+Presolve eliminates 111 constraints and 21 variables.
+Adjusted problem:
+105 variables, all integer
+52 constraints, all linear; 180 nonzeros
+1 linear objective; 71 nonzeros.
+
+solve
+optimal integer solution within mipgap or absmipgap; objective 81199
+19 MIP simplex iterations
+0 branch-and-bound nodes
+absmipgap = 4.83704, relmipgap = 5.95702e-05
+display
+stock [*,*] (tr)
+:  Janvier Fevrier  Mars Avril   Mai Juin    :=
+P1     92     100      0     0     0   50
+P2      0       0      0     0   100   50
+P3    100       0      0   100    80   50
+P4      0     100    100     0   100   50
+P5      0     100      0     0   100   50
+P6      0       0      0     0   100   50
+P7      0       0      0   100   100   50
+;
+
+display
+qte_prod [*,*] (tr)
+:  Janvier Fevrier  Mars Avril   Mai   Juin    :=
+P1    592     608      0   200      0   550
+P2      0     362      0   300    200   450
+P3    400      88      0   500    480     0
+P4    300     100      0   373    200     0
+P5    800     500      0   200   1100     0
+P6    200     300    400     0    400    78
+P7      0       0      0   200      0     0
+;
+
+display
+vendre [*,*] (tr)
+:  Janvier Fevrier  Mars Avril   Mai   Juin    :=
+P1    500     600    100   200      0   500
+P2      0     362      0   300    100   500
+P3    300     188      0   400    500    30
+P4    300       0      0   473    100    50
+P5    800     400    100   200   1000    50
+P6    200     300    400     0    300   128
+P7      0       0      0   100      0    50
+;
+
+display
+profit = 81199
+# ampl:  

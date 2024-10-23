@@ -1,3 +1,3 @@
 # Planification_industrielle
 
-version distant
+version loc

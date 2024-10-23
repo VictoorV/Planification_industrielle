@@ -1,0 +1,16 @@
+# automatically generated on Mon Dec 04 2023 at 09:19:00 AM CET
+reset;
+model ../monampl/projet-m2/projet2/final.mod;
+data ../monampl/projet-m2/projet2/final.dat;
+option solver cplex;
+solve;
+display stock;
+display qte_prod;
+display vendre;
+#display choix; # Q2 et Q3
+#display mach; # Q3
+display profit;
+
+
+
+
